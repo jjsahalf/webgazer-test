@@ -1,27 +1,42 @@
 <!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <HTML>
-   <HEAD>
-      <TITLE>
-         A Small Hello
-      </TITLE>
-   </HEAD>
+
+<HEAD>
+   <TITLE>
+      A Small Hello
+   </TITLE>
+</HEAD>
+
 <BODY>
-   <script src="webgazer.js"></script> 
+
+
+   <img id="myImg" src="img_pulpit.jpg" alt="The Pulpit Rock" width="304" height="228">
+
+
    <script>
-        window.onload = function () {
-        webgazer.setRegression('ridge')
-        .setTracker('clmtrackr')
-        .setGazeListener(function (data, clock) {
-            //var xprediction = data.x;
-            //var yprediction = data.y;
-            //console.log(xprediction);
-            //console.log(yprediction);
-            //console.log(clock);
-        })
-        .begin()
-        .showPredictionPoints(true)};
+      function myFunction() {
+         var x = document.getElementById("myImg").src;
+         document.getElementById("demo").innerHTML = x;
+      }
+   </script>
+   <script src="webgazer.js"></script>
+   <script>
+      window.onload = function () {
+         webgazer.setRegression('ridge')
+            .setTracker('clmtrackr')
+            .setGazeListener(function (data, clock) {
+               //var xprediction = data.x;
+               //var yprediction = data.y;
+               //console.log(xprediction);
+               //console.log(yprediction);
+               //console.log(clock);
+            })
+            .begin()
+            .showPredictionPoints(true)
+      };
    </script>
    <H1>Hi</H1>
    <P>This is very minimal "hello world" HTML document.</P>
 </BODY>
+
 </HTML>

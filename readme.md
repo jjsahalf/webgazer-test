@@ -1,3 +1,15 @@
+# Do these things to have everything set up
+
+## Run this script in terminal.
+./run-this.sh
+
+## To allow Chrome to access local self-signed webpage, navigate to
+```
+chrome://flags/#unsafely-treat-insecure-origin-as-secure
+```
+
+# The script does the following things for you.
+
 ## Install homebrew if you haven't
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -31,7 +43,3 @@ http-server -S -C cert.pem
 A great WebGazer video tutorial: 
 https://www.youtube.com/watch?v=NRLlRh2apA8
 
-To allow Chrome to access local self-signed webpage, navigate to
-```
-chrome://flags/#unsafely-treat-insecure-origin-as-secure
-```

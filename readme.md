@@ -1,9 +1,29 @@
-## Run a simple HTTPs server to host this static page
+## Install homebrew if you haven't
 
-Follow the readme file in this repo to install a simple web server.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+or go to homebrew homepage to learn more.
+
+## Install openssl if you haven't
+
+brew install openssl
+
+## Install a simple http server if you haven't
+
+brew install http-server
+
+or 
+
+follow the readme file in this repo to install a simple web server.
 https://github.com/http-party/http-server
 
-Then just run it:
+## Create a certificate for http TLS session
+
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+
+## Run a simple HTTPs server to host this static page
+
+Run the command below in the terminal under the path of your static web page.
 ```
 http-server -S -C cert.pem
 ```

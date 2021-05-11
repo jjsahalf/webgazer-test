@@ -25,11 +25,15 @@
          webgazer.setRegression('ridge')
             .setTracker('clmtrackr')
             .setGazeListener(function (data, clock) {
-               //var xprediction = data.x;
-               //var yprediction = data.y;
-               //console.log(xprediction);
-               //console.log(yprediction);
-               //console.log(clock);
+               if (data == null) {
+                  console.log("data is null");
+                  return;
+               }
+               var xprediction = data.x; //these x coordinates are relative to the viewport
+               var yprediction = data.y; //these y coordinates are relative to the viewport
+               console.log(`xprediction is ${xprediction}`);
+               console.log(`yprediction is ${yprediction}`);
+               console.log(`clock is ${clock}`);
             })
             .begin()
             .showPredictionPoints(true)
